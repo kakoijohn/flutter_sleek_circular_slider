@@ -58,14 +58,17 @@ class CircularSliderAppearance {
       if (customColors!.progressBarColors != null) {
         return customColors!.progressBarColors;
       } else if (customColors!.progressBarColor != null) {
-        return [customColors!.progressBarColor!, customColors!.progressBarColor!];
+        return [
+          customColors!.progressBarColor!,
+          customColors!.progressBarColor!
+        ];
       }
     }
     return null;
   }
 
   List<Color>? get _customTrackColors {
-  	return customColors?.trackColors;
+    return customColors?.trackColors;
   }
 
   double? get _gradientStartAngle => customColors?.gradientStartAngle;
@@ -103,6 +106,7 @@ class CircularSliderAppearance {
   TextStyle? get _mainLabelStyle => infoProperties?.mainLabelStyle;
   TextStyle? get _topLabelStyle => infoProperties?.topLabelStyle;
   TextStyle? get _bottomLabelStyle => infoProperties?.bottomLabelStyle;
+  TextStyle? get _modifierLabelStyle => infoProperties?.modifierLabelStyle;
   PercentageModifier? get _modifier => infoProperties?.modifier;
 
   PercentageModifier get infoModifier =>
@@ -110,24 +114,31 @@ class CircularSliderAppearance {
   String? get infoTopLabelText => _topLabelText;
   String? get infoBottomLabelText => _bottomLabelText;
   TextStyle get infoMainLabelStyle {
-    return _mainLabelStyle ?? TextStyle(
-        fontWeight: FontWeight.w100,
-        fontSize: size / 5.0,
-        color: Color.fromRGBO(30, 0, 59, 1.0));
+    return _mainLabelStyle ??
+        TextStyle(
+            fontWeight: FontWeight.w100,
+            fontSize: size / 5.0,
+            color: Color.fromRGBO(30, 0, 59, 1.0));
   }
 
   TextStyle get infoTopLabelStyle {
-    return _topLabelStyle ?? TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: size / 10.0,
-        color: Color.fromRGBO(147, 81, 120, 1.0));
+    return _topLabelStyle ??
+        TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: size / 10.0,
+            color: Color.fromRGBO(147, 81, 120, 1.0));
   }
 
   TextStyle get infoBottomLabelStyle {
-    return _bottomLabelStyle ?? TextStyle(
-        fontWeight: FontWeight.w600,
-        fontSize: size / 10.0,
-        color: Color.fromRGBO(147, 81, 120, 1.0));
+    return _bottomLabelStyle ??
+        TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: size / 10.0,
+            color: Color.fromRGBO(147, 81, 120, 1.0));
+  }
+
+  TextStyle get modifierLabelStyle {
+    return _modifierLabelStyle ?? infoTopLabelStyle;
   }
 
   const CircularSliderAppearance(
@@ -195,6 +206,7 @@ class InfoProperties {
   final TextStyle? mainLabelStyle;
   final TextStyle? topLabelStyle;
   final TextStyle? bottomLabelStyle;
+  final TextStyle? modifierLabelStyle;
   final String? topLabelText;
   final String? bottomLabelText;
 
@@ -204,5 +216,6 @@ class InfoProperties {
       this.mainLabelStyle,
       this.topLabelStyle,
       this.bottomLabelStyle,
+      this.modifierLabelStyle,
       this.modifier});
 }

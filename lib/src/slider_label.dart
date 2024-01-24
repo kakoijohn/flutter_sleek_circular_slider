@@ -4,7 +4,8 @@ import 'appearance.dart';
 class SliderLabel extends StatelessWidget {
   final double value;
   final CircularSliderAppearance appearance;
-  const SliderLabel({Key? key, required this.value, required this.appearance}) : super(key: key);
+  const SliderLabel({Key? key, required this.value, required this.appearance})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class SliderLabel extends StatelessWidget {
     }
     final modifier = appearance.infoModifier(value);
     widgets.add(
-      Text('$modifier', style: appearance.infoMainLabelStyle),
+      Text('$modifier', style: appearance.modifierLabelStyle),
     );
     if (appearance.infoBottomLabelText != null) {
       widgets.add(Text(
