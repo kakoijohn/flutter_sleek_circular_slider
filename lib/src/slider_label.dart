@@ -25,7 +25,12 @@ class SliderLabel extends StatelessWidget {
     }
     final modifier = appearance.infoModifier(value);
     widgets.add(
-      Text('$modifier', style: appearance.modifierLabelStyle),
+      Row(
+        children: [
+          Text('$value', style: appearance.infoMainLabelStyle),
+          Text('$modifier', style: appearance.modifierLabelStyle),
+        ],
+      ),
     );
     if (appearance.infoBottomLabelText != null) {
       widgets.add(Text(
