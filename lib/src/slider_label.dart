@@ -24,10 +24,11 @@ class SliderLabel extends StatelessWidget {
       ));
     }
     final modifier = appearance.infoModifier(value);
+    final roundedVal = value.round().toInt();
     widgets.add(
       Row(
         children: [
-          Text('$value', style: appearance.infoMainLabelStyle),
+          Text('$roundedVal', style: appearance.infoMainLabelStyle),
           Text('$modifier', style: appearance.modifierLabelStyle),
         ],
       ),
