@@ -27,6 +27,7 @@ class SliderLabel extends StatelessWidget {
     final roundedVal = value.round().toInt();
     widgets.add(
       Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text('$roundedVal', style: appearance.infoMainLabelStyle),
           Text('$modifier', style: appearance.modifierLabelStyle),
