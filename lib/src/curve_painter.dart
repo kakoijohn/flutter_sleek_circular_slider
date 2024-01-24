@@ -102,11 +102,20 @@ class _CurvePainter extends CustomPainter {
     var dotPaint = Paint()..color = appearance.dotColor;
     var innerDotPaint = Paint()..color = Color(0xFF202939);
 
+    var dotShadow = Paint()
+      ..color = Colors.black.withAlpha(100)
+      ..maskFilter = MaskFilter.blur(BlurStyle.normal, convertRadiusToSigma(3));
+
     Offset handler = degreesToCoordinates(
         center!, -math.pi / 2 + startAngle + currentAngle + 1.5, radius);
     canvas.drawCircle(handler, appearance.handlerSize, dotPaint);
     canvas.drawCircle(handler, appearance.handlerSize * 0.8, innerDotPaint);
     canvas.drawCircle(handler, appearance.handlerSize * 0.5, dotPaint);
+    canvas.drawCircle(handler, appearance.handlerSize * 1.5, dotShadow);
+  }
+
+  static double convertRadiusToSigma(double radius) {
+    return radius * 0.57735 + 0.5;
   }
 
   drawCircularArc(
