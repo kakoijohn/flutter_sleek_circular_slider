@@ -9,7 +9,7 @@ class SliderLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return appearance.info ?? SizedBox.shrink();
+    return appearance.info;
   }
 
   // List<Widget> builtInfo(CircularSliderAppearance appearance) {
