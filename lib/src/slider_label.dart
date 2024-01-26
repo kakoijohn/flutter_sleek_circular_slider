@@ -9,7 +9,8 @@ class SliderLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return appearance.info;
+    // return appearance.info;
+    return Container();
   }
 
   // List<Widget> builtInfo(CircularSliderAppearance appearance) {
