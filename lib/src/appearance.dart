@@ -40,7 +40,7 @@ class CircularSliderAppearance {
   final int spinnerDuration;
   final CustomSliderWidths? customWidths;
   final CustomSliderColors? customColors;
-  final InfoProperties? infoProperties;
+  final Widget info;
 
   double? get _customTrackWidth => customWidths?.trackWidth;
   double? get _customProgressBarWidth => customWidths?.progressBarWidth;
@@ -101,45 +101,45 @@ class CircularSliderAppearance {
   double? get shadowStep => _customShadowStep;
   Color get dotColor => _customDotColor ?? _defaultDotColor;
 
-  String? get _topLabelText => infoProperties?.topLabelText;
-  String? get _bottomLabelText => infoProperties?.bottomLabelText;
-  TextStyle? get _mainLabelStyle => infoProperties?.mainLabelStyle;
-  TextStyle? get _topLabelStyle => infoProperties?.topLabelStyle;
-  TextStyle? get _bottomLabelStyle => infoProperties?.bottomLabelStyle;
-  TextStyle? get _modifierLabelStyle => infoProperties?.modifierLabelStyle;
-  PercentageModifier? get _modifier => infoProperties?.modifier;
+  // String? get _topLabelText => infoProperties?.topLabelText;
+  // String? get _bottomLabelText => infoProperties?.bottomLabelText;
+  // TextStyle? get _mainLabelStyle => infoProperties?.mainLabelStyle;
+  // TextStyle? get _topLabelStyle => infoProperties?.topLabelStyle;
+  // TextStyle? get _bottomLabelStyle => infoProperties?.bottomLabelStyle;
+  // TextStyle? get _modifierLabelStyle => infoProperties?.modifierLabelStyle;
+  // PercentageModifier? get _modifier => infoProperties?.modifier;
 
-  PercentageModifier get infoModifier =>
-      _modifier ?? _defaultPercentageModifier;
-  String? get infoTopLabelText => _topLabelText;
-  String? get infoBottomLabelText => _bottomLabelText;
-  TextStyle get infoMainLabelStyle {
-    return _mainLabelStyle ??
-        TextStyle(
-            fontWeight: FontWeight.w100,
-            fontSize: size / 5.0,
-            color: Color.fromRGBO(30, 0, 59, 1.0));
-  }
+  // PercentageModifier get infoModifier =>
+  //     _modifier ?? _defaultPercentageModifier;
+  // String? get infoTopLabelText => _topLabelText;
+  // String? get infoBottomLabelText => _bottomLabelText;
+  // TextStyle get infoMainLabelStyle {
+  //   return _mainLabelStyle ??
+  //       TextStyle(
+  //           fontWeight: FontWeight.w100,
+  //           fontSize: size / 5.0,
+  //           color: Color.fromRGBO(30, 0, 59, 1.0));
+  // }
 
-  TextStyle get infoTopLabelStyle {
-    return _topLabelStyle ??
-        TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: size / 10.0,
-            color: Color.fromRGBO(147, 81, 120, 1.0));
-  }
+  // TextStyle get infoTopLabelStyle {
+  //   return _topLabelStyle ??
+  //       TextStyle(
+  //           fontWeight: FontWeight.w600,
+  //           fontSize: size / 10.0,
+  //           color: Color.fromRGBO(147, 81, 120, 1.0));
+  // }
 
-  TextStyle get infoBottomLabelStyle {
-    return _bottomLabelStyle ??
-        TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: size / 10.0,
-            color: Color.fromRGBO(147, 81, 120, 1.0));
-  }
+  // TextStyle get infoBottomLabelStyle {
+  //   return _bottomLabelStyle ??
+  //       TextStyle(
+  //           fontWeight: FontWeight.w600,
+  //           fontSize: size / 10.0,
+  //           color: Color.fromRGBO(147, 81, 120, 1.0));
+  // }
 
-  TextStyle get modifierLabelStyle {
-    return _modifierLabelStyle ?? infoTopLabelStyle;
-  }
+  // TextStyle get modifierLabelStyle {
+  //   return _modifierLabelStyle ?? infoTopLabelStyle;
+  // }
 
   const CircularSliderAppearance(
       {this.customWidths,
@@ -147,7 +147,7 @@ class CircularSliderAppearance {
       this.size = _defaultSize,
       this.startAngle = _defaultStartAngle,
       this.angleRange = _defaultAngleRange,
-      this.infoProperties,
+      this.info,
       this.animationEnabled = true,
       this.counterClockwise = false,
       this.spinnerMode = false,

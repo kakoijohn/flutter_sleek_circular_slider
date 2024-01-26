@@ -9,37 +9,34 @@ class SliderLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: builtInfo(appearance),
-    );
+    return appearance.info;
   }
 
-  List<Widget> builtInfo(CircularSliderAppearance appearance) {
-    var widgets = <Widget>[];
-    if (appearance.infoTopLabelText != null) {
-      widgets.add(Text(
-        appearance.infoTopLabelText!,
-        style: appearance.infoTopLabelStyle,
-      ));
-    }
-    final modifier = appearance.infoModifier(value);
-    final roundedVal = value.round().toInt();
-    widgets.add(
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('$roundedVal', style: appearance.infoMainLabelStyle),
-          Text('$modifier', style: appearance.modifierLabelStyle),
-        ],
-      ),
-    );
-    if (appearance.infoBottomLabelText != null) {
-      widgets.add(Text(
-        appearance.infoBottomLabelText!,
-        style: appearance.infoBottomLabelStyle,
-      ));
-    }
-    return widgets;
-  }
+  // List<Widget> builtInfo(CircularSliderAppearance appearance) {
+  //   var widgets = <Widget>[];
+  //   if (appearance.infoTopLabelText != null) {
+  //     widgets.add(Text(
+  //       appearance.infoTopLabelText!,
+  //       style: appearance.infoTopLabelStyle,
+  //     ));
+  //   }
+  //   final modifier = appearance.infoModifier(value);
+  //   final roundedVal = value.round().toInt();
+  //   widgets.add(
+  //     Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         Text('$roundedVal', style: appearance.infoMainLabelStyle),
+  //         Text('$modifier', style: appearance.modifierLabelStyle),
+  //       ],
+  //     ),
+  //   );
+  //   if (appearance.infoBottomLabelText != null) {
+  //     widgets.add(Text(
+  //       appearance.infoBottomLabelText!,
+  //       style: appearance.infoBottomLabelStyle,
+  //     ));
+  //   }
+  //   return widgets;
+  // }
 }
