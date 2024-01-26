@@ -147,7 +147,7 @@ class CircularSliderAppearance {
       this.size = _defaultSize,
       this.startAngle = _defaultStartAngle,
       this.angleRange = _defaultAngleRange,
-      this.info = SizedBox.shrink(),
+      this.info = const SizedBox.shrink(),
       this.animationEnabled = true,
       this.counterClockwise = false,
       this.spinnerMode = false,
