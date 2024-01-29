@@ -40,7 +40,7 @@ class CircularSliderAppearance {
   final int spinnerDuration;
   final CustomSliderWidths? customWidths;
   final CustomSliderColors? customColors;
-  // final Widget info;
+  final Widget info;
 
   double? get _customTrackWidth => customWidths?.trackWidth;
   double? get _customProgressBarWidth => customWidths?.progressBarWidth;
@@ -147,7 +147,7 @@ class CircularSliderAppearance {
       this.size = _defaultSize,
       this.startAngle = _defaultStartAngle,
       this.angleRange = _defaultAngleRange,
-      // this.info = const SizedBox.shrink(),
+      this.info = const SizedBox.shrink(),
       this.animationEnabled = true,
       this.counterClockwise = false,
       this.spinnerMode = false,
