@@ -1,7 +1,5 @@
 library circular_slider;
 
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
