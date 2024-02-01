@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 typedef String PercentageModifier(double percentage);
 
 class CircularSliderAppearance {
-  static const double _defaultSize = 150.0;
+  static const Size _defaultSize = Size(150.0, 150.0);
   static const double _defaultStartAngle = 150.0;
   static const double _defaultAngleRange = 240.0;
 
@@ -30,7 +30,7 @@ class CircularSliderAppearance {
     return '$roundedValue %';
   }
 
-  final double size;
+  final Size size;
   final double startAngle;
   final double angleRange;
   final bool animationEnabled;

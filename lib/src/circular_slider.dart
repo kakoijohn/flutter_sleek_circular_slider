@@ -159,7 +159,7 @@ class _SleekCircularSliderState extends State<SleekCircularSlider>
         },
         child: _buildRotatingPainter(
             rotation: _rotation,
-            size: Size(widget.appearance.size, widget.appearance.size)));
+            size: widget.appearance.size;
   }
 
   @override
@@ -206,7 +206,7 @@ class _SleekCircularSliderState extends State<SleekCircularSlider>
     if (rotation != null) {
       return Transform(
           transform: Matrix4.identity()..rotateZ((rotation) * 5 * math.pi / 6),
-          alignment: FractionalOffset.bottomCenter,
+          alignment: FractionalOffset.center,
           child: _buildPainter(size: size));
     } else {
       return _buildPainter(size: size);
