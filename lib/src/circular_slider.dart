@@ -206,7 +206,7 @@ class _SleekCircularSliderState extends State<SleekCircularSlider>
     if (rotation != null) {
       return Transform(
           transform: Matrix4.identity()..rotateZ((rotation) * 5 * math.pi / 6),
-          alignment: FractionalOffset.center,
+          alignment: FractionalOffset.bottomCenter,
           child: _buildPainter(size: size));
     } else {
       return _buildPainter(size: size);
