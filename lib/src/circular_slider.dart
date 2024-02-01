@@ -1,5 +1,7 @@
 library circular_slider;
 
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -158,7 +160,10 @@ class _SleekCircularSliderState extends State<SleekCircularSlider>
           ),
         },
         child: _buildRotatingPainter(
-            rotation: _rotation, size: widget.appearance.size));
+          rotation: _rotation,
+          size: widget.appearance.size,
+          alignment: widget.appearance.alignment,
+        ));
   }
 
   @override
@@ -201,23 +206,31 @@ class _SleekCircularSliderState extends State<SleekCircularSlider>
     }
   }
 
-  Widget _buildRotatingPainter({double? rotation, required Size size}) {
+  Widget _buildRotatingPainter({
+    double? rotation,
+    required Size size,
+    required Alignment alignment,
+  }) {
     if (rotation != null) {
       return Transform(
           transform: Matrix4.identity()..rotateZ((rotation) * 5 * math.pi / 6),
           alignment: FractionalOffset.center,
-          child: _buildPainter(size: size));
+          child: _buildPainter(size: size, alignment: alignment));
     } else {
-      return _buildPainter(size: size);
+      return _buildPainter(size: size, alignment: alignment);
     }
   }
 
-  Widget _buildPainter({required Size size}) {
+  Widget _buildPainter({
+    required Size size,
+    required Alignment alignment,
+  }) {
     return CustomPaint(
         painter: _painter,
         child: Container(
             width: size.width,
             height: size.height,
+            alignment: alignment,
             child: _buildChildWidget()));
   }
 

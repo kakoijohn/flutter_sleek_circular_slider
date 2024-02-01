@@ -31,6 +31,7 @@ class CircularSliderAppearance {
   }
 
   final Size size;
+  final Alignment alignment;
   final double startAngle;
   final double angleRange;
   final bool animationEnabled;
@@ -145,6 +146,7 @@ class CircularSliderAppearance {
       {this.customWidths,
       this.customColors,
       this.size = _defaultSize,
+      this.alignment = Alignment.center,
       this.startAngle = _defaultStartAngle,
       this.angleRange = _defaultAngleRange,
       this.info = const SizedBox.shrink(),
