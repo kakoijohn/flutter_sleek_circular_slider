@@ -48,7 +48,7 @@ class CircularSliderAppearance {
   double? get _customHandlerSize => customWidths?.handlerSize;
 
   double get trackWidth => _customTrackWidth ?? progressBarWidth / 4.0;
-  double get progressBarWidth => _customProgressBarWidth ?? size / 10.0;
+  double get progressBarWidth => _customProgressBarWidth ?? size.width / 10.0;
   double get handlerSize => _customHandlerSize ?? progressBarWidth / 5.0;
   double get shadowWidth => _customShadowWidth ?? progressBarWidth * 1.4;
 
