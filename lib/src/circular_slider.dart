@@ -284,11 +284,7 @@ class _SleekCircularSliderState extends State<SleekCircularSlider>
       _selectedAngle = radiansNormalized(math.acos(
         (position.dx - _painter!.center!.dx) / _painter!.radius,
       ));
-      if (_selectedAngle! < 0) {
-        _selectedAngle = 0;
-      } else if (_selectedAngle! > math.pi) {
-        _selectedAngle = math.pi;
-      }
+      print('selected angle: $_selectedAngle');
     }
     _setupPainter(counterClockwise: widget.appearance.counterClockwise);
     _updateOnChange();
