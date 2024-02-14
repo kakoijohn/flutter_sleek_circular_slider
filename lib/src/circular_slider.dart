@@ -281,10 +281,13 @@ class _SleekCircularSliderState extends State<SleekCircularSlider>
       _selectedAngle = coordinatesToRadians(_painter!.center!, position);
       // setup painter with new angle values and update onChange
     } else {
-      print(
-          'painter divider: ${(position.dx - _painter!.center!.dx) / _painter!.radius}');
+      double numerator = (position.dx - _painter!.center!.dx);
+      if (numerator.abs() > _painter!.radius) {
+        numerator = _painter!.radius * numerator.sign;
+      }
+
       _selectedAngle = radiansNormalized(math.acos(
-        (position.dx - _painter!.center!.dx) / _painter!.radius,
+        numerator / _painter!.radius,
       ));
     }
     _setupPainter(counterClockwise: widget.appearance.counterClockwise);
