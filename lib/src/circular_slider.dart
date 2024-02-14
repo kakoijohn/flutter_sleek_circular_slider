@@ -276,20 +276,22 @@ class _SleekCircularSliderState extends State<SleekCircularSlider>
     final double touchWidth = widget.appearance.progressBarWidth >= 25.0
         ? widget.appearance.progressBarWidth
         : 25.0;
-    if (isPointAlongCircle(
-        position, _painter!.center!, _painter!.radius, touchWidth)) {
+    if (true ||
+        isPointAlongCircle(
+            position, _painter!.center!, _painter!.radius, touchWidth)) {
       _selectedAngle = coordinatesToRadians(_painter!.center!, position);
       // setup painter with new angle values and update onChange
-    } else {
-      double numerator = (position.dx - _painter!.center!.dx);
-      if (numerator.abs() > _painter!.radius) {
-        numerator = _painter!.radius * numerator.sign;
-      }
-
-      _selectedAngle = radiansNormalized(math.acos(
-        numerator / _painter!.radius,
-      ));
     }
+    // else {
+    //   double numerator = (position.dx - _painter!.center!.dx);
+    //   if (numerator.abs() > _painter!.radius) {
+    //     numerator = _painter!.radius * numerator.sign;
+    //   }
+
+    //   _selectedAngle = radiansNormalized(math.acos(
+    //     numerator / _painter!.radius,
+    //   ));
+    // }
     _setupPainter(counterClockwise: widget.appearance.counterClockwise);
     _updateOnChange();
     setState(() {});
