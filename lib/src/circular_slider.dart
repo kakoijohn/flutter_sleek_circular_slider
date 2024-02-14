@@ -282,7 +282,7 @@ class _SleekCircularSliderState extends State<SleekCircularSlider>
       // setup painter with new angle values and update onChange
     } else {
       _selectedAngle =
-          coordinatesToRadians(_painter!.center!.translate(0, 500), position);
+          math.acos((position.dx - _painter!.center!.dx) / _painter!.radius);
     }
     _setupPainter(counterClockwise: widget.appearance.counterClockwise);
     _updateOnChange();
